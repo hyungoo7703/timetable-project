@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Schedule List</title>
+    <link rel="stylesheet" href="/css/schedule-list.css">
+</head>
+<body>
+<div class="page-wrapper">
+    <div class="table-wrapper">
+        <h1 class="schedule-title">Time Table</h1>
+        <table class="schedule-table">
+            <thead>
+            <tr>
+                <th>No</th>
+                <th>Title</th>
+                <th>Start Date</th>
+                <th>End Date</th>
+            </tr>
+            </thead>
+            <tbody>
+            <!-- 스케쥴 목록을 출력하는 로직 -->
+            <tr th:each="schedule, index : ${schedules}">
+                <td th:text="${index.count}"></td>
+                <td th:onclick="|viewScheduleDetail('${schedule.id}')|" th:text="${schedule.title}" class="td-title"></td>
+                <td th:text="${schedule.startTime}"></td>
+                <td th:text="${schedule.endTime}"></td>
+            </tr>
+            </tbody>
+        </table>
+        <a th:href="@{/schedule/form}" class="add-schedule-btn">추가(➕)</a>
+    </div>
+</div>
+</body>
+<script th:inline>
+    function viewScheduleDetail(id) {
+        window.location.href = "/schedule/view?id=" + id;
+    }
+    function formatDateTime(dateTimeString) {
+        const date = new Date(dateTimeString);
+        const year = date.getFullYear();
+        const month = ("0" + (date.getMonth() + 1)).slice(-2);
+        const day = ("0" + date.getDate()).slice(-2);
+        return year + "-" + month + "-" + day;
+    }
+</script>
+</html>
+

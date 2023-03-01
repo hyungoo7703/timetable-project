@@ -1,0 +1,24 @@
+#?? ?? ??
+server:
+  port: 8088
+
+# H2 ?????? ??
+spring:
+  datasource:
+    url: jdbc:h2:~/test
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    show-sql: true
+    hibernate:
+      ddl-auto: create
+    #defer-datasource-initialization: true
+
+# ?? ??
+logging:
+  level:
+    org.springframework: INFO #????? ??
+    org.hibernate: ERROR #??? ????? ?????
+    project.timetable.indiv: DEBUG #??? ?? -> ?? ??

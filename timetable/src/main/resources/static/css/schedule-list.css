@@ -1,0 +1,117 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* 페이지 전체를 감싸는 div */
+.page-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f8f8f8;
+}
+
+/* 테이블 전체를 감싸는 div */
+.table-wrapper {
+    max-width: 1080px;
+    width: 100%;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* 스케줄 리스트 전체 */
+.schedule-list {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+/* 스케줄 리스트 테이블 */
+.schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.schedule-table th,
+.schedule-table td {
+    padding: 12px 15px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.schedule-table th:first-child,
+.schedule-table td:first-child {
+    width: 60px;
+}
+
+.schedule-table th {
+    background-color: #f5f5f5;
+    font-weight: bold;
+}
+
+.schedule-table td {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.td-title {
+    max-width: 250px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.td-title:hover {
+    cursor: pointer;
+    color: cornflowerblue;
+}
+
+/* 스케줄 리스트 타이틀 */
+.schedule-title {
+    font-size: 24px;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+/* 스케줄 추가 버튼 */
+.add-schedule-btn {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+}
+
+.add-schedule-btn:hover {
+    background-color: #0069d9;
+}
+
+/* 반응형 스타일 */
+@media only screen and (max-width: 768px) {
+    .schedule-table th,
+    .schedule-table td {
+        padding: 8px;
+    }
+
+    .schedule-title {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+
+    .add-schedule-btn {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
