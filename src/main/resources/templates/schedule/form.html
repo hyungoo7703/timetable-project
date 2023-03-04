@@ -8,6 +8,7 @@
 <body>
 <div class="page-wrapper">
     <div class="form-wrapper">
+        <h1 class="form-title">일정(Schedule) 등록</h1>
         <form method="post" th:object="${scheduleFormDto}">
             <div class="form-item">
                 <label for="title">Title:</label>
@@ -44,5 +45,12 @@
     description.addEventListener('click', function() {
         this.classList.toggle('expanded');
     });
+    const now = new Date();
+    const offset = now.getTimezoneOffset() * 60000; // UTC 기준 offset (밀리초 단위)
+    const formattedNow = new Date(now.getTime() - offset).toISOString().slice(0, 16);
+    document.getElementById('startTime').value = formattedNow;
+    now.setDate(now.getDate() + 1); // 현재 날짜에서 하루를 더해줍니다.
+    const formattedTomorrow = new Date(now.getTime() - offset).toISOString().slice(0, 16);
+    document.getElementById('endTime').value = formattedTomorrow;
 </script>
 </html>

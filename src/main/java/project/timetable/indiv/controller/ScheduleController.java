@@ -31,10 +31,7 @@ public class ScheduleController {
 
     @GetMapping("/list")
     public String getAllSchedules(Model model) {
-        List<ScheduleModel> scheduleModels = scheduleService.getAllSchedules();
-        List<ScheduleListDto> scheduleListDtos = scheduleModels.stream()
-                .map(ScheduleListDto::fromModel)
-                .collect(Collectors.toList());
+        List<ScheduleListDto> scheduleListDtos = scheduleService.getAllSchedules();
         model.addAttribute("schedules", scheduleListDtos);
         return "schedule/list";
     }
@@ -42,8 +39,7 @@ public class ScheduleController {
     @GetMapping("/view")
     public String getSchedule(@RequestParam("id") Long id, Model model) {
         try {
-            ScheduleModel scheduleModel = scheduleService.getSchedule(id);
-            ScheduleViewDto scheduleViewDto = ScheduleViewDto.fromModel(scheduleModel);
+            ScheduleViewDto scheduleViewDto = scheduleService.getSchedule(id);
             model.addAttribute("schedule", scheduleViewDto);
         }catch (NoSuchElementException e) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "일정을 찾을 수 없습니다.", e);

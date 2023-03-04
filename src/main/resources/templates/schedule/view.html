@@ -3,8 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <title>Schedule</title>
+    <link rel="stylesheet" href="/css/schedule-view.css">
 </head>
 <body>
+<div class="page-wrapper">
+    <div class="view-wrapper">
+        <h2 class="view-title" th:text="${schedule.title}"></h2>
+        <table>
+            <tbody>
+            <tr>
+                <th>제목</th>
+                <td th:text="${schedule.title}"></td>
+            </tr>
+            <tr>
+                <th>날짜</th>
+                <td th:text="${#temporals.format(schedule.startTime, 'yyyy/MM/dd')}"></td>
+            </tr>
+            <tr>
+                <th>시작시간</th>
+                <td th:text="${#temporals.format(schedule.startTime, 'HH:mm')}"></td>
+            </tr>
+            <tr>
+                <th>종료시간</th>
+                <td th:text="${#temporals.format(schedule.endTime, 'HH:mm')}"></td>
+            </tr>
+            <tr>
+                <th>설명</th>
+                <td th:text="${schedule.description}"></td>
+            </tr>
+            </tbody>
+        </table>
+        <a th:href="@{/schedule/list}" class="list-back">일정(Schedule) 목록으로</a>
+    </div>
+</div>
 </body>
 </html>
 

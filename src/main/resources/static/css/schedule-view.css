@@ -1,0 +1,73 @@
+/* 스타일 초기화 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 페이지 전체를 감싸는 div */
+.page-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f8f8f8;
+}
+
+/* Schedule 전체를 감싸는 div */
+.view-wrapper {
+    max-width: 1080px;
+    width: 100%;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Schedule 제목 */
+.view-title {
+    font-size: 24px;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th {
+    width: 20%;
+    background-color: #F5F5F5;
+    border: 1px solid #E0E0E0;
+    font-weight: normal;
+    padding: 10px;
+    text-align: left;
+}
+
+td {
+    border: 1px solid #E0E0E0;
+    padding: 10px;
+}
+
+/* 마지막 설명 컬럼 */
+tr > td:last-child {
+    width: 50%; /* 설명 영역의 너비 조정 */
+    vertical-align: top; /* 셀의 내용을 상단에 맞춤 */
+}
+
+.list-back {
+    display: block;
+    background-color: #f44336;
+    color: #ffffff;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-top: 20px;
+    padding: 10px 20px;
+}

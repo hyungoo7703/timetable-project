@@ -24,6 +24,14 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+/* 폼 제목 */
+.form-title {
+    font-size: 24px;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
 /* 폼의 각 항목을 감싸는 div */
 .form-item {
     margin-bottom: 20px;
